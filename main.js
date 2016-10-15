@@ -9,20 +9,17 @@ var wins = 0;
 var losses = 0;
 var wordArray = []; //holds array of the random word chosen
 var guessArray = []; //creates an array of the user guessed letters
-var dashArray = []; //creates an array of dashes for the amount of letters in the randome word chosen
-
+var dashArray = []; //creates an array of dashes for the amount of letters in the random word chosen
 var correctLetters = [];
 var newBlankDashArray = [];
-var newDashArray = [];
 var incorrectGuess = [];
-
 var guessArray = [];
-
 var userGuess;
 
-console.log("-----------------------------------------------------------")
+
+console.log("-----------------------------------------------------------");
 console.log("             WELCOME TO BUSTED ASS HANGMAN!!!")
-console.log("----------------------------------------------------------- " + '\n')
+console.log("----------------------------------------------------------- " + '\n');
 console.log("                  " + Letter.newBlankDashArray) + "\n";
 
 function gameStart() {
@@ -36,11 +33,6 @@ function gameStart() {
         if (guessArray.indexOf(userGuess) == -1) {
             guessArray.push(userGuess);
             console.log("\nLetters guessed: " + guessArray + "\n");
-            // }else{
-            // 	console.log("You already guessed that!");
-            // 	gameStart();
-            // }
-
 
 
             if (Game.wordArray.indexOf(userGuess) == -1) {
@@ -48,8 +40,9 @@ function gameStart() {
 
                 remainingGuesses--;
                 console.log("\nIncorrect guess. You have " + remainingGuesses + " remaining guesses.\n");
+
                 if (newDashArray === []) {
-                    console.log("                  " + Letter.newBlankDashArray) + "\n";
+                    console.log("                   " + Letter.newBlankDashArray)
                 } else {
                     console.log("                   " + newDashArray);
                 }
@@ -86,4 +79,4 @@ gameStart();
 
 module.exports = {
     userGuess: userGuess
-}
+};
